@@ -1,21 +1,33 @@
-![Polymer Logo](https://github.com/vercel/vercel/blob/main/packages/frameworks/logos/polymer.svg)
+# \<lit-project>
 
-# Polymer Example
+This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) recommendation.
 
-This directory is a brief example of a [Polymer](https://www.polymer-project.org/) app that can be deployed to Vercel with zero configuration.
+## Installation
 
-## Deploy Your Own
-
-Deploy your own Polymer project with Vercel.
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/polymer&template=polymer)
-
-_Live Example: https://polymer-template.vercel.app_
-
-### How We Created This Example
-
-To get started with Polymer deployed with Vercel, you can use the [Polymer CLI](https://polymer-library.polymer-project.org/3.0/docs/tools/polymer-cli) to initialize the project:
-
-```shell
-$ polymer init
+```bash
+npm i lit-project
 ```
+
+## Usage
+
+```html
+<script type="module">
+  import "lit-project/lit-project.js";
+</script>
+
+<lit-project></lit-project>
+```
+
+## Tooling configs
+
+For most of the tools, the configuration is in the `package.json` to reduce the amount of files in your project.
+
+If you customize the configuration a lot, you can consider moving them to individual files.
+
+## Local Demo with `web-dev-server`
+
+```bash
+npm start
+```
+
+To run a local development server that serves the basic demo located in `demo/index.html`
