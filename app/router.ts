@@ -3,14 +3,22 @@ import {Router} from '@lit-labs/router';
 import {customElement} from 'lit/decorators.js';
 
 import './home/page';
-import './sign-in/page';
+import './me/page';
+
+const routes = [
+  {
+    path: '/',
+    render: () => html`<app-home></app-home>`,
+  },
+  {
+    path: '/me',
+    render: () => html`<app-me></app-me>`,
+  },
+];
 
 @customElement('app-router')
 export class AppRouter extends LitElement {
-  private router = new Router(this, [
-    {path: '/', render: () => html`<app-home></app-home>`},
-    {path: '/sign-in', render: () => html`<app-sign-in></app-sign-in>`},
-  ]);
+  private router = new Router(this, routes);
 
   render() {
     return this.router.outlet();

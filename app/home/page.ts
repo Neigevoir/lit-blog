@@ -1,103 +1,115 @@
 import {LitElement, css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 
+import { getDate } from '../../utils/date';
+
+import '../../components/banner';
+
 @customElement('app-home')
 export class AppHome extends LitElement {
+  list: any[]
+
   @property()
   docsHint = 'Click on Lit logos to learn more';
 
   @property({type: Number})
   count = 0;
 
-  private _onClick() {
-    this.count += 1;
+  constructor(){
+    super()
+    this.list = [
+      {
+        isMDX: false,
+        title: "Lit Blog",
+        subTitle: "building blog use Lit",
+        desc: "a blog, building by Lit and Lit Labs",
+        postTime: 1660555825742
+      },
+      {
+        isMDX: false,
+        title: "Lit Blog",
+        subTitle: "building blog use Lit",
+        desc: "a blog, building by Lit and Lit Labs",
+        postTime: 1660555825742
+      },
+      {
+        isMDX: false,
+        title: "Lit Blog",
+        subTitle: "building blog use Lit",
+        desc: "a blog, building by Lit and Lit Labs",
+        postTime: 1660555825742
+      }
+    ]
   }
 
   render() {
     return html`
-      <div>
-        <a href="https://lit.dev" target="_blank">
-          <img src="public/images/lit.svg" class="logo lit" alt="Lit logo" />
-        </a>
-      </div>
-      <slot></slot>
-      <div class="card">
-        <button @click=${this._onClick} part="button">
-          count is ${this.count}
-        </button>
-      </div>
-      <p class="read-the-docs">${this.docsHint}</p>
-    `;
+      <hero-banner title="Grasp The Intrinsic"></hero-banner>
+      <div class="container">
+          <div class="list-container">
+          ${this.list?.map((v: any) => {
+              const url = v.isMDX ? '/mdx' : `/articles/${v.title}`
+              return html`
+                <a href=${url}>
+                  <div class="item">
+                    <h2 class="title">
+                      ${v.title}
+                    </h2>
+                    <h3 class="sub-title">
+                      ${v.subTitle}
+                    </h3>
+                    <span class="desc">${v.desc}</span>
+                    <span class="date">
+                      ${getDate(Number(v.postTime))} By Bobolo
+                    </span>
+                    <hr class="hr" />
+                  </div>
+                </a>
+              `
+            })}
+          </div>
+  </div>`;
   }
 
   static styles = css`
-    :host {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 2rem;
-      text-align: center;
+    .container{
+      margin-top:5rem;
+      margin-bottom:5rem;
+      padding-left:1rem;
+      padding-right:1rem;
     }
-
-    .logo {
-      height: 6em;
-      padding: 1.5em;
-      will-change: filter;
+    .list-container{
+      max-width: 64rem;
+      margin: 0px auto;
     }
-    .logo:hover {
-      filter: drop-shadow(0 0 2em #646cffaa);
-    }
-    .logo.lit:hover {
-      filter: drop-shadow(0 0 2em #325cffaa);
-    }
-
-    .card {
-      padding: 2em;
-    }
-
-    .read-the-docs {
-      color: #888;
-    }
-
-    h1 {
-      font-size: 3.2em;
-      line-height: 1.1;
-    }
-
-    a {
-      font-weight: 500;
-      color: #646cff;
-      text-decoration: inherit;
-    }
-    a:hover {
-      color: #535bf2;
-    }
-
-    button {
-      border-radius: 8px;
-      border: 1px solid transparent;
-      padding: 0.6em 1.2em;
-      font-size: 1em;
-      font-weight: 500;
-      font-family: inherit;
-      background-color: #1a1a1a;
+    .item{
+      display: flex;
       cursor: pointer;
-      transition: border-color 0.25s;
+      width: 100%;
+      flex-direction: column;
     }
-    button:hover {
-      border-color: #646cff;
+    .title{
+      line-height: 1.2;
+      font-size:24px;
     }
-    button:focus,
-    button:focus-visible {
-      outline: 4px auto -webkit-focus-ring-color;
+    .sub-title{
+      font-size: 16px;
     }
-
-    @media (prefers-color-scheme: light) {
-      a:hover {
-        color: #747bff;
-      }
-      button {
-        background-color: #f9f9f9;
-      }
+    .desc{
+      font-size: 14px;
+    }
+    .date{
+      font-size: 16px;
+      font-style: italic;
+      text-align: right;
+    }
+    .hr{
+      opacity: 0.6;
+      border: 0;
+      border-color: inherit;
+      border-style: solid;
+      border-bottom-width: 1px;
+      width: 100%;
     }
   `;
 }

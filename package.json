@@ -4,10 +4,10 @@
   "license": "MIT",
   "author": "lit-project",
   "version": "0.0.1",
-
   "scripts": {
     "analyze": "cem analyze --litelement",
-    "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\"",
+    "dev": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds --hmr\"",
+    "start": "MODE=prod wds",
     "build": "tsc && npm run analyze -- --exclude dist",
     "prepublish": "tsc && npm run analyze -- --exclude dist",
     "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",
@@ -29,10 +29,13 @@
   "dependencies": {
     "@lit-labs/router": "^0.1.1",
     "@lit-labs/ssr": "^2.2.3",
-    "lit": "^2.4.1"
+    "@material/web": "^0.1.0-alpha.0",
+    "lit": "^2.4.1",
+    "tslib": "^2.4.1"
   },
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.6.6",
+    "@open-wc/dev-server-hmr": "^0.1.3",
     "@open-wc/eslint-config": "^9.0.0",
     "@open-wc/testing": "^3.1.7",
     "@typescript-eslint/eslint-plugin": "^5.44.0",
@@ -45,7 +48,6 @@
     "husky": "^8.0.2",
     "lint-staged": "^13.0.3",
     "prettier": "^2.8.0",
-    "tslib": "^2.4.1",
     "typescript": "^4.9.3",
     "urlpattern-polyfill": "^6.0.2"
   },
