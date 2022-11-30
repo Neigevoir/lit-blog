@@ -1,5 +1,5 @@
 import {LitElement, css, html} from 'lit';
-import {customElement, property} from 'lit/decorators.js';
+import { customElement } from 'lit/decorators.js';
 
 import { getDate } from '../../utils/date';
 
@@ -7,17 +7,11 @@ import '../../components/banner';
 
 @customElement('app-home')
 export class AppHome extends LitElement {
-  list: any[]
-
-  @property()
-  docsHint = 'Click on Lit logos to learn more';
-
-  @property({type: Number})
-  count = 0;
+  listData: any[]
 
   constructor(){
     super()
-    this.list = [
+    this.listData = [
       {
         isMDX: false,
         title: "Lit Blog",
@@ -47,7 +41,7 @@ export class AppHome extends LitElement {
       <hero-banner title="Grasp The Intrinsic"></hero-banner>
       <div class="container">
           <div class="list-container">
-          ${this.list?.map((v: any) => {
+          ${this.listData?.map((v: any) => {
               const url = v.isMDX ? '/mdx' : `/articles/${v.title}`
               return html`
                 <a href=${url}>
@@ -77,6 +71,7 @@ export class AppHome extends LitElement {
       margin-bottom:5rem;
       padding-left:1rem;
       padding-right:1rem;
+      color:var(--blog-a-color);
     }
     .list-container{
       max-width: 64rem;

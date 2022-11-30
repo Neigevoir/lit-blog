@@ -1,8 +1,6 @@
 import {LitElement, html, css} from 'lit';
 import {customElement} from 'lit/decorators.js';
 
-import '@material/web/button/text-button.js';
-
 @customElement('app-navbar')
 export class AppNavbar extends LitElement {
   render() {
@@ -22,8 +20,6 @@ export class AppNavbar extends LitElement {
       position: sticky;
       top: 0px;
       left: 0px;
-      background-color: #1a202c;
-      box-shadow: rgb(0 0 0 / 10%) 0px 1px 2px 0px;
       flex-direction: row;
       display: flex;
       padding: 0px 5%;

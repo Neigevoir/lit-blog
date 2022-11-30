@@ -3,11 +3,10 @@ import {html, LitElement, css} from 'lit';
 
 @customElement('hero-banner')
 export class HeroBanner extends LitElement {
-  @property({type: String})
+  @property({ type: String })
   title = '';
 
-
-  render() {
+  protected render() {
     return html`
     <div class="banner-container">
       <h2 class="title">

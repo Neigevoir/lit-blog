@@ -9,12 +9,14 @@
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
+    "useDefineForClassFields": false,
     "importHelpers": true,
-    "outDir": "dist",
-    "sourceMap": true,
-    "declarationMap": true,
-    "inlineSources": true,
-    "rootDir": "./",
+    "emitDeclarationOnly": true,
+    "outDir": "./types",
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    // "sourceMap": true,
+    // "inlineSources": true,
     "declaration": true,
     "incremental": true,
     "noUnusedLocals": true,
@@ -33,3 +35,4 @@
   },
   "include": ["**/*.ts"]
 }
+

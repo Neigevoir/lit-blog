@@ -20,5 +20,7 @@
 /dist/
 /out-tsc/
 
+/build/
+
 storybook-static
 custom-elements.json

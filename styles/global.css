@@ -8,12 +8,13 @@
 
   --blog-a-color: #646cff;
   --blog-a-color-hover: #535bf2;
-
 }
 
 body {
   margin: 0;
   padding: 0;
+  background-color: #1a202c;
+  box-shadow: rgb(0 0 0 / 10%) 0px 1px 2px 0px;
 }
 
 a {

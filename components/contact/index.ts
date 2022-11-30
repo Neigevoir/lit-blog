@@ -11,6 +11,7 @@ export class AppContact extends LitElement {
       align-items: center;
       padding-top: 1vh;
       padding-bottom: 2.5vh;
+      color: var(--blog-a-color);
     }
     .svg {
       width:36px;
