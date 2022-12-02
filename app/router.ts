@@ -2,17 +2,21 @@ import {LitElement, html} from 'lit';
 import {Router} from '@lit-labs/router';
 import {customElement} from 'lit/decorators.js';
 
-import './home/page';
-import './me/page';
 
 const routes = [
   {
     path: '/',
-    render: () => html`<app-home></app-home>`,
+    render: async () => {
+      await import('./home/page');
+      return html`<app-home></app-home>`
+    },
   },
   {
     path: '/me',
-    render: () => html`<app-me></app-me>`,
+    render: async() => {
+      await import('./me/page');
+      return html`<app-me></app-me>`
+    },
   },
 ];
 

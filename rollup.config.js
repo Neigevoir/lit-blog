@@ -14,6 +14,7 @@ export default {
   output: {
     dir: 'dist',
   },
+  // external: [/^lit/],
   plugins: [
     // Entry point for application build; can specify a glob to build multiple
     // HTML files for non-SPA app

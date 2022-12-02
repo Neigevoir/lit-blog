@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "wds --hmr",
     "start": "node server.js",
-    "build": "rollup -c rollup.config.js",
+    "build": "yarn clean && rollup -c rollup.config.js",
+    "clean": "rm -rf dist",
     "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",
     "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore",
     "test": "tsc && wtr --coverage",
@@ -31,7 +32,6 @@
     "@lit-labs/ssr": "^2.2.3",
     "@material/web": "^0.1.0-alpha.0",
     "koa": "^2.13.4",
-    "koa-node-resolve": "^1.0.0-pre.9",
     "koa-static": "^5.0.0",
     "lit": "^2.4.1"
   },

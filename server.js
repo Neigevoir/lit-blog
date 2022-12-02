@@ -2,7 +2,6 @@ import fs from 'fs';
 import Koa from 'koa';
 import Router from '@koa/router';
 import staticFiles from 'koa-static';
-import { nodeResolve } from 'koa-node-resolve';
   
 const PORT = 3000  
 
@@ -15,7 +14,6 @@ router.get('/', (ctx) => {
 });
 
 app.use(router.routes());
-app.use(nodeResolve());
 app.use(staticFiles('./dist'));
 
 app.listen(PORT, () => {
