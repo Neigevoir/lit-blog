@@ -4,7 +4,6 @@ import { fileURLToPath } from 'url';
 
 /** Use Hot Module replacement by adding --hmr to the start command */
 const hmr = process.argv.includes('--hmr');
-
 export default /** @type {import('@web/dev-server').DevServerConfig} */ ({
   open: '/',
   /** Use regular watch mode if HMR is not enabled. */
@@ -13,7 +12,7 @@ export default /** @type {import('@web/dev-server').DevServerConfig} */ ({
   nodeResolve: {
     exportConditions: ['browser', 'development'],
   },
-  rootDir: "./",
+  rootDir: './',
   // basePath?: string,
 
   /** Compile JS for older browsers. Requires @web/dev-server-esbuild plugin */

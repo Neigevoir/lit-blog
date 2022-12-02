@@ -6,8 +6,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "wds --hmr",
-    "start": "MODE=prod wds",
-    "build": "tsc && rollup -c",
+    "start": "node server.js",
+    "build": "rollup -c rollup.config.js",
     "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",
     "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore",
     "test": "tsc && wtr --coverage",
@@ -26,9 +26,13 @@
     ]
   },
   "dependencies": {
+    "@koa/router": "^12.0.0",
     "@lit-labs/router": "^0.1.1",
     "@lit-labs/ssr": "^2.2.3",
     "@material/web": "^0.1.0-alpha.0",
+    "koa": "^2.13.4",
+    "koa-node-resolve": "^1.0.0-pre.9",
+    "koa-static": "^5.0.0",
     "lit": "^2.4.1"
   },
   "devDependencies": {
@@ -52,10 +56,9 @@
     "husky": "^8.0.2",
     "lint-staged": "^13.0.3",
     "prettier": "^2.8.0",
-    "rollup": "^3.5.0",
+    "rollup": "^3.5.1",
     "rollup-plugin-minify-html-literals": "^1.2.6",
     "rollup-plugin-summary": "^2.0.0",
-    "rollup-plugin-terser": "^7.0.2",
     "tslib": "^2.4.1",
     "typescript": "^4.9.3",
     "urlpattern-polyfill": "^6.0.2"

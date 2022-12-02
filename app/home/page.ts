@@ -1,104 +1,99 @@
 import {LitElement, css, html} from 'lit';
-import { customElement } from 'lit/decorators.js';
+import {customElement} from 'lit/decorators.js';
 
-import { getDate } from '../../utils/date';
+import {getDate} from '../../utils/date';
 
 import '../../components/banner';
 
 @customElement('app-home')
 export class AppHome extends LitElement {
-  listData: any[]
+  listData: any[];
 
-  constructor(){
-    super()
+  constructor() {
+    super();
     this.listData = [
       {
         isMDX: false,
-        title: "Lit Blog",
-        subTitle: "building blog use Lit",
-        desc: "a blog, building by Lit and Lit Labs",
-        postTime: 1660555825742
+        title: 'Lit Blog',
+        subTitle: 'building blog use Lit',
+        desc: 'a blog, building by Lit and Lit Labs',
+        postTime: 1660555825742,
       },
       {
         isMDX: false,
-        title: "Lit Blog",
-        subTitle: "building blog use Lit",
-        desc: "a blog, building by Lit and Lit Labs",
-        postTime: 1660555825742
+        title: 'Lit Blog',
+        subTitle: 'building blog use Lit',
+        desc: 'a blog, building by Lit and Lit Labs',
+        postTime: 1660555825742,
       },
       {
         isMDX: false,
-        title: "Lit Blog",
-        subTitle: "building blog use Lit",
-        desc: "a blog, building by Lit and Lit Labs",
-        postTime: 1660555825742
-      }
-    ]
+        title: 'Lit Blog',
+        subTitle: 'building blog use Lit',
+        desc: 'a blog, building by Lit and Lit Labs',
+        postTime: 1660555825742,
+      },
+    ];
   }
 
   render() {
-    return html`
-      <hero-banner title="Grasp The Intrinsic"></hero-banner>
+    return html` <hero-banner title="Grasp The Intrinsic"></hero-banner>
       <div class="container">
-          <div class="list-container">
+        <div class="list-container">
           ${this.listData?.map((v: any) => {
-              const url = v.isMDX ? '/mdx' : `/articles/${v.title}`
-              return html`
-                <a href=${url}>
-                  <div class="item">
-                    <h2 class="title">
-                      ${v.title}
-                    </h2>
-                    <h3 class="sub-title">
-                      ${v.subTitle}
-                    </h3>
-                    <span class="desc">${v.desc}</span>
-                    <span class="date">
-                      ${getDate(Number(v.postTime))} By Bobolo
-                    </span>
-                    <hr class="hr" />
-                  </div>
-                </a>
-              `
-            })}
-          </div>
-  </div>`;
+            const url = v.isMDX ? '/mdx' : `/articles/${v.title}`;
+            return html`
+              <a href=${url}>
+                <div class="item">
+                  <h2 class="title">${v.title}</h2>
+                  <h3 class="sub-title">${v.subTitle}</h3>
+                  <span class="desc">${v.desc}</span>
+                  <span class="date">
+                    ${getDate(Number(v.postTime))} By Bobolo
+                  </span>
+                  <hr class="hr" />
+                </div>
+              </a>
+            `;
+          })}
+        </div>
+      </div>`;
   }
 
   static styles = css`
-    .container{
-      margin-top:5rem;
-      margin-bottom:5rem;
-      padding-left:1rem;
-      padding-right:1rem;
-      color:var(--blog-a-color);
+    .container {
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      color: var(--blog-a-color);
     }
-    .list-container{
+    .list-container {
       max-width: 64rem;
       margin: 0px auto;
     }
-    .item{
+    .item {
       display: flex;
       cursor: pointer;
       width: 100%;
       flex-direction: column;
     }
-    .title{
+    .title {
       line-height: 1.2;
-      font-size:24px;
+      font-size: 24px;
     }
-    .sub-title{
+    .sub-title {
       font-size: 16px;
     }
-    .desc{
+    .desc {
       font-size: 14px;
     }
-    .date{
+    .date {
       font-size: 16px;
       font-style: italic;
       text-align: right;
     }
-    .hr{
+    .hr {
       opacity: 0.6;
       border: 0;
       border-color: inherit;

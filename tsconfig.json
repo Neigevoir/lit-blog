@@ -12,7 +12,7 @@
     "useDefineForClassFields": false,
     "importHelpers": true,
     "emitDeclarationOnly": true,
-    "outDir": "./types",
+    "outDir": "dist/types",
     "isolatedModules": true,
     "skipLibCheck": true,
     // "sourceMap": true,

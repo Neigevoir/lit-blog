@@ -4,7 +4,7 @@ import {html, LitElement, css} from 'lit';
 @customElement('app-contact')
 export class AppContact extends LitElement {
   static styles = css`
-    .contact-container{
+    .contact-container {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -14,7 +14,7 @@ export class AppContact extends LitElement {
       color: var(--blog-a-color);
     }
     .svg {
-      width:36px;
+      width: 36px;
     }
     .nav-item {
       padding: 16px;
@@ -32,8 +32,7 @@ export class AppContact extends LitElement {
   `;
 
   render() {
-    return html` 
-    <div class="contact-container">
+    return html` <div class="contact-container">
       <div>
         <a href="https://github.com/Neigevoir/bobolo" target="_blank">
           <svg
