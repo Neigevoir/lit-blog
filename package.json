@@ -33,7 +33,7 @@
     "@material/web": "^0.1.0-alpha.0",
     "koa": "^2.13.4",
     "koa-static": "^5.0.0",
-    "lit": "^2.4.1"
+    "lit": "^2.6.0"
   },
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.6.6",
