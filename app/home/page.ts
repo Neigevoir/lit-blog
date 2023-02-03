@@ -13,21 +13,18 @@ export class AppHome extends LitElement {
     super();
     this.listData = [
       {
-        isMDX: false,
         title: 'Lit Blog',
         subTitle: 'building blog use Lit',
         desc: 'a blog, building by Lit and Lit Labs',
         postTime: 1660555825742,
       },
       {
-        isMDX: false,
         title: 'Lit Blog',
         subTitle: 'building blog use Lit',
         desc: 'a blog, building by Lit and Lit Labs',
         postTime: 1660555825742,
       },
       {
-        isMDX: false,
         title: 'Lit Blog',
         subTitle: 'building blog use Lit',
         desc: 'a blog, building by Lit and Lit Labs',
