@@ -8,7 +8,7 @@
     "dev": "wds --hmr",
     "start": "node server.js",
     "build": "yarn clean && rollup -c rollup.config.js",
-    "clean": "rm -rf dist",
+    "clean": "rm -rf build",
     "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",
     "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore",
     "test": "tsc && wtr --coverage",
