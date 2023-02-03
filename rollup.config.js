@@ -12,7 +12,7 @@ const minifyHTML = pkgMinifyHTML.default
 
 export default {
   output: {
-    dir: 'dist',
+    dir: 'build',
   },
   // external: [/^lit/],
   plugins: [

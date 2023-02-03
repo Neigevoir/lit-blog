@@ -34,7 +34,7 @@ export class AppContact extends LitElement {
   render() {
     return html` <div class="contact-container">
       <div>
-        <a href="https://github.com/Neigevoir/bobolo" target="_blank">
+        <a href="https://github.com/Neigevoir/lit-blog" target="_blank">
           <svg
             class="svg"
             viewBox="64 64 896 896"

@@ -37,25 +37,22 @@ export class AppHome extends LitElement {
   }
 
   render() {
-    return html` <hero-banner title="Grasp The Intrinsic"></hero-banner>
+    return html` <hero-banner title="首页"></hero-banner>
       <div class="container">
         <div class="list-container">
-          ${this.listData?.map((v: any) => {
-            const url = v.isMDX ? '/mdx' : `/articles/${v.title}`;
-            return html`
-              <a href=${url}>
-                <div class="item">
-                  <h2 class="title">${v.title}</h2>
-                  <h3 class="sub-title">${v.subTitle}</h3>
-                  <span class="desc">${v.desc}</span>
-                  <span class="date">
-                    ${getDate(Number(v.postTime))} By Bobolo
-                  </span>
-                  <hr class="hr" />
-                </div>
-              </a>
-            `;
-          })}
+          ${this.listData?.map(
+            (v: any) => html`
+              <div class="item">
+                <h2 class="title">${v.title}</h2>
+                <h3 class="sub-title">${v.subTitle}</h3>
+                <span class="desc">${v.desc}</span>
+                <span class="date">
+                  ${getDate(Number(v.postTime))} By Bobolo
+                </span>
+                <hr class="hr" />
+              </div>
+            `
+          )}
         </div>
       </div>`;
   }
